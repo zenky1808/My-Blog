@@ -1,0 +1,44 @@
+<div class="home-container mt-5">
+
+    <div class="row">
+        <div class="col-md-8">
+            {{#each post}}
+            <div class="col-md-12">
+                <div class="card post-item">
+                    <div class="card-header">
+                        <a href="#">
+                            <img src="{{this.img}}" alt="">
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <a href="#">
+                            <h5 class="card-title">{{this.title}}</h5>
+                        </a>
+                        <p class="card-text">{{this.description}}.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="right-post col-md-4 mt-2">
+            <h4>Top Posts</h4>
+            {{#each post}}
+            <div class="col-md-12">
+                <div class="card post-item-right">
+                    <div class="card-header">
+                        <a href="#">
+                            <img src="{{this.img}}" alt="">
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="#">{{this.title}}</a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
