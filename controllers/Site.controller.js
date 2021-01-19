@@ -16,3 +16,6 @@ module.exports.about = (req, res) => {
 module.exports.contact = (req, res) => {
     res.render('contact')
 }
+module.exports.login = (req, res, next) => {
+    res.render('login')
+}
