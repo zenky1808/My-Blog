@@ -1,13 +1,20 @@
 const Model_User = require('../../models/Account');
 const { hashPassWord } = require('../../util/auth')
 // lay du lieu 
-module.exports.getUser = (req, res, next) => {
-    Model_User.find({})
-        .then(data => {
-            res.status(200).json(data)
-        }).catch(err => {
-            res.status(500).json('Loi sever')
-        })
+module.exports.getUser = async (req, res, next) => {
+    // Model_User.find({})
+    //     .then(data => {
+    //         res.status(200).json(data)
+    //     }).catch(err => {
+    //         res.status(500).json('Loi sever')
+    //     })
+    try {
+        const data = await Model_User.find({});
+        res.status(200).json({data: data})
+    } catch (error) {
+        res.status(400).json({message: error})
+    }
+
 }
 
 module.exports.getOneUser = (req, res, next) => {

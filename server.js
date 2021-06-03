@@ -1,8 +1,11 @@
 const express = require('express');
+const dotenv = require("dotenv");
+dotenv.config();
 const path = require('path');
 const app = express();
 const handlebars = require('express-handlebars');
-const port = 3000;
+const port = process.env.PORT;
+// const port = 3000;
 const db = require('./config/db');
 const cors = require("cors")
 
@@ -27,4 +30,5 @@ testApi(app)
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
+    console.log(port);
 });
